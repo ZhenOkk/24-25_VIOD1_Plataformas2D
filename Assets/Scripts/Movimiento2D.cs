@@ -21,14 +21,20 @@ public class Movimiento2D : MonoBehaviour
     [SerializeField] private bool touchGround;
     private bool jump = false;
 
+    [Header("Animacion")]
+    private Animator animator;
+
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         movimientoHorizontal = Input.GetAxisRaw("Horizontal") * speed;
+
+        animator.SetFloat("Horizontal", Mathf.Abs(movimientoHorizontal));
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -42,6 +48,7 @@ public class Movimiento2D : MonoBehaviour
         touchGround = Physics2D.OverlapBox(groundController.position, boxDimensions, 0f, isGround);
         Movimiento(movimientoHorizontal * Time.fixedDeltaTime, jump);
         jump = false;
+        animator.SetBool("enSuelo", touchGround);
     }
 
     private void Movimiento(float mover, bool jump)
