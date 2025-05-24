@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuPrincipal: MonoBehaviour
 {
+    public GameObject InitialMenu;
+    public GameObject Creditos;
+
     private void Update()
     {
         
@@ -21,5 +24,17 @@ public class MenuPrincipal: MonoBehaviour
     {
         Debug.Log("Cerrando juego");
         Application.Quit();
+    }
+
+    public void ShowCredits()
+    {
+        InitialMenu.SetActive(false);
+        Creditos.SetActive(true);
+    }
+
+    public void HideCredits()
+    {
+        InitialMenu.SetActive(true);
+        Creditos.SetActive(false);
     }
 }
