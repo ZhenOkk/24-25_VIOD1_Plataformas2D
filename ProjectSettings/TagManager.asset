@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - MovingGround
   - DeathVoid
+  - Audio
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

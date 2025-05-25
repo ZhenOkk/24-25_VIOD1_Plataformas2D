@@ -5,6 +5,14 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     Vector2 startPos;
+
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio"); 
+        AudioManager audioManager = audioObject.GetComponent<AudioManager>();
+    }
     private void Start()
     {
         startPos = transform.position;
@@ -15,6 +23,7 @@ public class Respawn : MonoBehaviour
         if (collision.CompareTag("DeathVoid"))
         {
             Die();
+            audioManager.PlaySFX(audioManager.death);
         }
     }
     void Die()

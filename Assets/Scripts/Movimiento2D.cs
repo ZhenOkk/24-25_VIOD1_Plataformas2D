@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movimiento2D : MonoBehaviour
 {
+
     private Rigidbody2D rb2D;
 
     [Header("Movimiento")]
