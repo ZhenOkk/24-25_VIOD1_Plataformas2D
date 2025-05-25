@@ -6,6 +6,8 @@ using UnityEngine;
 public class Movimiento2D : MonoBehaviour
 {
 
+    public AudioSource AudioSource;
+
     private Rigidbody2D rb2D;
 
     [Header("Movimiento")]
@@ -73,6 +75,7 @@ public class Movimiento2D : MonoBehaviour
         {
             touchGround = false;
             rb2D.AddForce(new Vector2(0f, jumpStrenght));
+            AudioSource.Play();
         }
     }
     private void Girar()
