@@ -984,7 +984,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8ea436dc2af3846a79ea7e186e4a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 1545619004}
+  JumpPlayer: {fileID: 1545619004}
+  CoinCollected: {fileID: 1545619008}
+  VictorySound: {fileID: 1545619007}
+  DeathPlayer: {fileID: 1545619005}
+  LandingPlayer: {fileID: 1545619006}
   speed: 300
   speedSmooth: 0.2
   jumpStrenght: 375
@@ -1006,6 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4a9c49d6a1ef64080159fad465df85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LandingPlayer: {fileID: 1545619006}
   layerMask:
     serializedVersion: 2
     m_Bits: 72
@@ -1345,7 +1350,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5bbf2ecf77d404b41a2a1b195726c611, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b967a42ad39776e42a06b5defed3056f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1441,7 +1446,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 778730d0ba2e4c449b15b6d1c291c9ac, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 539503114679ea54fbc87af0d2497430, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5027,10 +5032,11 @@ MonoBehaviour:
   musicSource: {fileID: 954331639}
   SFXSource: {fileID: 2066263209}
   background: {fileID: 8300000, guid: cd5c37f2ca43f8349a63dc00fd2afeff, type: 3}
-  jump: {fileID: 8300000, guid: 6e002a60736ca99449c75b6b1bb2869f, type: 3}
-  walk: {fileID: 8300000, guid: 778730d0ba2e4c449b15b6d1c291c9ac, type: 3}
-  landing: {fileID: 8300000, guid: 2b0db4d2c1a7b964ea4dca54e069d0cf, type: 3}
-  death: {fileID: 8300000, guid: a3f4346821d06154b862d57005fc163f, type: 3}
+  JumpPlayer: {fileID: 8300000, guid: 6e002a60736ca99449c75b6b1bb2869f, type: 3}
+  CoinCollected: {fileID: 8300000, guid: 539503114679ea54fbc87af0d2497430, type: 3}
+  VictorySound: {fileID: 8300000, guid: b967a42ad39776e42a06b5defed3056f, type: 3}
+  LandingPlayer: {fileID: 8300000, guid: 2b0db4d2c1a7b964ea4dca54e069d0cf, type: 3}
+  DeathPlayer: {fileID: 8300000, guid: a3f4346821d06154b862d57005fc163f, type: 3}
 --- !u!4 &2088974359
 Transform:
   m_ObjectHideFlags: 0

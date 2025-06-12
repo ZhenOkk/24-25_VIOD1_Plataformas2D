@@ -10,10 +10,11 @@ public class AudioManager : MonoBehaviour
 
     [Header("----- Audio Clip -----")]
     public AudioClip background;
-    public AudioClip jump;
-    public AudioClip walk;
-    public AudioClip landing;
-    public AudioClip death;
+    public AudioClip JumpPlayer;
+    public AudioClip CoinCollected;
+    public AudioClip VictorySound;
+    public AudioClip LandingPlayer;
+    public AudioClip DeathPlayer;
 
     private void Start()
     {

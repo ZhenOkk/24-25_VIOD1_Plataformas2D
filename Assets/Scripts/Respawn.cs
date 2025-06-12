@@ -23,7 +23,6 @@ public class Respawn : MonoBehaviour
         if (collision.CompareTag("DeathVoid"))
         {
             Die();
-            audioManager.PlaySFX(audioManager.death);
         }
     }
     void Die()

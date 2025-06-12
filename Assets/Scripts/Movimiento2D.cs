@@ -6,7 +6,11 @@ using UnityEngine;
 public class Movimiento2D : MonoBehaviour
 {
 
-    public AudioSource AudioSource;
+    public AudioSource JumpPlayer;
+    public AudioSource CoinCollected;
+    public AudioSource VictorySound;
+    public AudioSource DeathPlayer;
+    public AudioSource LandingPlayer;
 
     private Rigidbody2D rb2D;
 
@@ -64,18 +68,20 @@ public class Movimiento2D : MonoBehaviour
         {
             //Girar
             Girar();
+            
         }
         else if (mover < 0 && mirandoDerecha)
         {
             //Girar
             Girar();
+            
         }
 
         if (touchGround && jump)
         {
             touchGround = false;
             rb2D.AddForce(new Vector2(0f, jumpStrenght));
-            AudioSource.Play();
+            JumpPlayer.Play();
         }
     }
     private void Girar()
@@ -89,5 +95,24 @@ public class Movimiento2D : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(groundController.position, boxDimensions);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("DeathVoid"))
+        {
+            DeathPlayer.Play();
+        }
+        if (collision.CompareTag("Key"))
+        {
+            CoinCollected.Play();
+        }
+        if (collision.CompareTag("Door"))
+        {
+            CoinCollected.Play();
+        }
+        if (collision.CompareTag("MovingGround"))
+        {
+            LandingPlayer.Play();
+        }
     }
 }
