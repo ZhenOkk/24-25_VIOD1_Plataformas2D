@@ -11,6 +11,7 @@ public class Movimiento2D : MonoBehaviour
     public AudioSource VictorySound;
     public AudioSource DeathPlayer;
     public AudioSource LandingPlayer;
+    public AudioSource FootSteps;
 
     private Rigidbody2D rb2D;
 
@@ -36,6 +37,7 @@ public class Movimiento2D : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        FootSteps = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -48,7 +50,17 @@ public class Movimiento2D : MonoBehaviour
         {
             jump = true;
         }
-
+        if (rb2D.velocity.x != 0)
+        {
+            if (!FootSteps.isPlaying)
+            {
+                FootSteps.Play();
+            }
+        }
+        else
+        {
+            FootSteps.Stop();
+        }
     }
 
     private void FixedUpdate()
